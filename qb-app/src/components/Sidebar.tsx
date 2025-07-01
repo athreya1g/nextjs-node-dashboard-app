@@ -2,13 +2,12 @@
 import { Layout, Menu, Avatar } from 'antd';
 import { UserOutlined, DashboardOutlined, ReadOutlined } from '@ant-design/icons';
 import Link from 'next/link';
-import useUser from '../hooks/useUser';
 import styled from 'styled-components';
 
 const { Sider } = Layout;
 
-const Sidebar = () => {
-  const { user } = useUser();
+const Sidebar = ({user}) => {
+  
 
   return (
     <Sider breakpoint="lg" collapsedWidth="0">

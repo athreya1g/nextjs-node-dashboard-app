@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Blogs() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    const id = Math.floor(Math.random() * 3) + 1;
+    const id =sessionStorage.getItem("userId");
     fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/users/${id}/posts`)
       .then(res => res.json())
       .then(data => setPosts(data));

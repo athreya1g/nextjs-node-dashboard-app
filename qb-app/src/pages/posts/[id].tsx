@@ -12,7 +12,7 @@ export default function PostDetail() {
 
   useEffect(() => {
     if (id) {
-      fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/posts/${id}`)
         .then(res => res.json())
         .then(data => {
           setPost(data);
@@ -22,7 +22,7 @@ export default function PostDetail() {
   }, [id]);
 
   const handleSave = () => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${id}`, {
       method: 'PUT',
       body: JSON.stringify(form),
       headers: { 'Content-type': 'application/json; charset=UTF-8' },

@@ -62,4 +62,4 @@ npm test
 
 📝 Environment
 Create a .env.local in the frontend folder:
-NEXT_PUBLIC_API_BASE_URL=http://localhost:6000
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
