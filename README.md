@@ -36,29 +36,25 @@ Jest
 
 How to run from Git
 1. Clone the repo
-git clone <YOUR_REPO_URL>
-cd nextjs-node-dashboard-app
+->git clone <YOUR_REPO_URL>
+->cd nextjs-node-dashboard-app
 
-2. Setup and run the backend
-cd backend
-npm install
-npm start
+3. Setup and run the backend
+->cd backend
+->npm install
+->npm start
 This will start the Node server on http://localhost:5000.
 
-Tip:
-You can run backend tests:
-npm test
 
 3. Setup and run the frontend
-cd qb-app
-npm install
-npm dev
-npm run dev
+->cd qb-app
+->npm install
+->npm run dev
 This will start the Next.js app on http://localhost:3000.
 
 Tip:
 Frontend tests can be run with:
-npm test
+->npm test
 
 📝 Environment
 Create a .env.local in the frontend folder:
