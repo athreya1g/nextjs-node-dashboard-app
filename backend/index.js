@@ -14,7 +14,13 @@ app.use("/users", userRoutes);
 // error handler
 app.use(errorHandler);
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`))
+  .on("error", (err) => {
+    if (err.code === "EADDRINUSE") {
+      console.error(`Port ${PORT} is already in use`);
+      process.exit(1);
+    }
+  });
 // Export the app for testing
 module.exports = app;
 // This code sets up an Express server with CORS and JSON parsing middleware.
@@ -40,3 +46,4 @@ module.exports = app;
 // The application is structured to allow for easy addition of new features and routes in the future, making it a flexible solution for building a user management API.
 // The use of middleware for CORS and JSON parsing ensures that the server can handle cross-origin requests
 // and parse incoming JSON data, which is essential for modern web applications.
+// The error handler is designed to provide a consistent response format for errors, making it easier for clients to handle errors gracefully.
